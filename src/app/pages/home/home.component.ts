@@ -22,9 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log('old value', this.logins);
-    // this.service.httpLogin();
-
     this.service.isLogged.subscribe(
       (logged : any) => {
         console.log('isLogged', logged);
@@ -48,7 +45,6 @@ export class HomeComponent implements OnInit {
 
       }
     );
-    // console.log('new value', this.logins);
   }
 
   onLogout(){

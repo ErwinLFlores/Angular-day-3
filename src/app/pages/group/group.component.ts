@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Profile} from '../myprofile/profile-model';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
@@ -13,15 +12,6 @@ export class GroupComponent implements OnInit {
   profileForm: any;
   groupList: any;
 
-  profile: Profile = {
-    email: '',
-    first_name: '',
-    last_name: '',
-    alias: '',
-    job_title: '',
-    mobile_number: '',
-    password: '',
-  }
 
   constructor(private service: GlobalService) { }
 

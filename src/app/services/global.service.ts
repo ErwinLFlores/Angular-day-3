@@ -20,11 +20,6 @@ export class GlobalService {
   httpLogin(logins: any){
     const url = 'https://stage-api-ubertickets.cloudstaff.com/v1/auth/login';
 
-    // const data = {
-    //   username: 'erwinf@cloudstaff.com',
-    //   password: 'SS@wada91824'
-    // };
-
     this.http.post(url, logins).subscribe(
       (response: any) => {
         console.log('success response' , response);
@@ -83,7 +78,6 @@ export class GlobalService {
 
   setToken(token:string): void{
     localStorage.setItem('token',token);
-    // return token;
   }
 
   getToken(): string{
