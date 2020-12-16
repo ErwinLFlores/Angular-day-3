@@ -50,7 +50,6 @@ export class GlobalService {
       },
       (error) => {
         console.log('this is from httpGetProfile Service', error);
-        this.route.navigate(['/']);
       }
     );
   }

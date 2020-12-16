@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Profile} from '../myprofile/profile-model';
 import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
@@ -11,9 +10,12 @@ export class GroupComponent implements OnInit {
 
   profileForm: any;
   groupList: any;
+  isLogged:boolean;
 
 
-  constructor(private service: GlobalService) { }
+  constructor(private service: GlobalService) {
+    this.isLogged = false;
+  }
 
 
   ngOnInit(): void {
@@ -26,8 +28,14 @@ export class GroupComponent implements OnInit {
       }
     );
 
+    this.service.isLogged.subscribe(
+      (logged : any) => {
+        console.log('isLogged', logged);
+        this.isLogged = logged;
+      }
+     );
 
-
+     this.service.checkLogStatus();
   }
 
 

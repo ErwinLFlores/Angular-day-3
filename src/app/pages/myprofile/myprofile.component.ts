@@ -28,6 +28,8 @@ export class MyprofileComponent implements OnInit {
   ngOnInit(): void {
     this.service.httpGetProfile();
 
+    this.service.checkLogStatus();
+
     if(this.service.getToken() === ''){
       this.route.navigate(['/']);
     }
